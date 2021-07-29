@@ -15,7 +15,7 @@ interface TimePickerrContainerProps {
 const TimePickerrContainer: React.FC<TimePickerrContainerProps> = props => {
   const [showPicker, setShowPicker] = useState(false);
 
-  const onChange = (event, selectedDate) => {
+  const onChange = (event: Event, selectedDate?: Date) => {
     const currentDate: Date = selectedDate || props.value;
     setShowPicker(!showPicker);
     props.onChangeText(currentDate);

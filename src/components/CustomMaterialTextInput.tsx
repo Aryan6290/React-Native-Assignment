@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import {colors} from '../data/colors';
 import {globalStyles} from '../globalStyles';
@@ -19,7 +19,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = props => {
         onChangeText={props.onChangeText}
         onFocus={() => setborderColor(colors.primary)}
         onBlur={() => setborderColor('#a9a9a9')}
-        style={{backgroundColor: '#fff'}}
+        style={styles.TextInputStyle}
         label={props.placeholder}
         theme={{
           colors: {
@@ -34,5 +34,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = props => {
     </View>
   );
 };
-
+const styles = StyleSheet.create({
+  TextInputStyle: {backgroundColor: '#fff'},
+});
 export default CustomTextInput;
